@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NSwag.AspNetCore" Version="13.18.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\InvokerGame.Business\InvokerGame.Business.csproj" />
     <ProjectReference Include="..\InvokerGame.Entities\InvokerGame.Entities.csproj" />
   </ItemGroup>

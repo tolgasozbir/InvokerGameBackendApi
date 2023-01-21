@@ -32,6 +32,14 @@ namespace InvokerGame.API
             services.AddControllers();
             services.AddSingleton<ITimerScoreService, TimerScoreManager>();
             services.AddSingleton<ITimerScoreRepository, TimerScoreRepository>();
+            //swagger
+            services.AddSwaggerDocument(config => {
+                config.PostProcess = (doc =>
+                {
+                    doc.Info.Title = "Dota 2 Invoker Game - Score API";
+                    doc.Info.Version = "v1.0.0";
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +51,10 @@ namespace InvokerGame.API
             }
 
             app.UseRouting();
+
+            //swagger
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
 
             app.UseEndpoints(endpoints =>
             {
