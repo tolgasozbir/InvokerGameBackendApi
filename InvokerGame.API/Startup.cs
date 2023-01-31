@@ -30,14 +30,14 @@ namespace InvokerGame.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<ITimerScoreService, TimerScoreManager>();
-            services.AddSingleton<ITimerScoreRepository, TimerScoreRepository>();
+            services.AddSingleton<IScoreService, ScoreManager>();
+            services.AddSingleton<IScoreRepository, ScoreRepository>();
             //swagger
             services.AddSwaggerDocument(config => {
                 config.PostProcess = (doc =>
                 {
                     doc.Info.Title = "Dota 2 Invoker Game - Score API";
-                    doc.Info.Version = "v1.0.0";
+                    doc.Info.Version = "v2.0.0";
                 });
             });
         }

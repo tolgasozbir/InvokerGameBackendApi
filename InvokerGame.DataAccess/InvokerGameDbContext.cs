@@ -15,5 +15,6 @@ namespace InvokerGame.DataAccess
         }
 
         public DbSet<TimerScore> TimerScores { get; set; }
+        public DbSet<ChallengerScore> ChallengerScores { get; set; }
     }
 }
